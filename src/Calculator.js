@@ -24,7 +24,14 @@ function Calculator({ workouts, allowSound }) {
       };
       playSound();
     },
-    [duration]
+    [duration, allowSound]
+  );
+
+  useEffect(
+    function () {
+      document.title = `Your ${number}-exercise workout`;
+    },
+    [number]
   );
 
   const mins = Math.floor(duration);
